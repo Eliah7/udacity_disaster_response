@@ -21,7 +21,7 @@ def load_data(database_filepath):
         database_filepath (str): Filepath of the SQLite database.
 
     Returns:
-        pandas.DataFrame: DataFrame containing the loaded data.
+        pandas.Series, pandas.Series, list : X, Y, category_names.
     """
     engine = create_engine(f'sqlite:///{database_filepath}.db')
     query = "SELECT * FROM categories;"

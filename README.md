@@ -28,7 +28,7 @@ You can install the required libraries using pip:
 
 ```bash
 pip install pandas numpy scikit-learn sqlalchemy nltk flask
-
+```
 
 ## Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.

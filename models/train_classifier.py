@@ -6,7 +6,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
 
 from sklearn.metrics import confusion_matrix
-from sklearn.model_selction import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
@@ -49,7 +49,7 @@ def tokenize(text):
     clean_tokens = []
     for tok in tokens:
         clean_tok = lemmatizer.lemmatize(tok).lower().strip()
-        clearn_tokens.append(clean_tok)
+        clean_tokens.append(clean_tok)
     
     return clean_tokens
 
@@ -63,10 +63,10 @@ def build_model():
     """
     pipeline = Pipeline([
         ('features', FeatureUnion([
-            'text_pipeline', Pipeline([
+            ('text_pipeline', Pipeline([
                 ('vect', CountVectorizer(tokenizer=tokenize)),
                 ('tfidf', TfidfTransformer())
-            ])
+            ]))
         ])),
         ('clf', RandomForestClassifier())
     ])

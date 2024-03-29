@@ -42,4 +42,6 @@ pip install pandas numpy scikit-learn sqlalchemy nltk flask
 
 3. Run your web app: `python run.py`
 
-4. Click the `PREVIEW` button to open the homepage
+4. Then, open a web browser and go to http://localhost:3001/ to access the web app.
+
+

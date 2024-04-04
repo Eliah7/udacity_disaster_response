@@ -59,6 +59,8 @@ def clean_data(df):
     df.drop_duplicates(inplace=True)
     
     print("Duplicate Count => ", df.duplicated().sum())
+    print("DF COLS => ", df.columns)
+    
     
     return df
 

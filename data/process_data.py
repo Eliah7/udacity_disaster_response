@@ -46,12 +46,14 @@ def clean_data(df):
     
     for column in categories:
         categories[column] = [cat[len(cat)-1:] for cat in categories[column]]
-        categories[column] = pd.Series(categories[column], dtype="object")
-    categories = categories[categories['storm'] != 2]
-    print("CATEGORES DF => ", categories.head())
+        categories[column] = pd.Series(categories[column], dtype="int64")
     
     df.drop(['categories'], inplace=True, axis=1)
     df = pd.concat([df, categories], axis=1)
+    
+    print("RELATED DF => ", df.related.unique())
+    df = df[df['related'] != 2]
+    print("RELATED DF => ", df.related.unique())
     
     # remove duplicates
     print("Duplicate Count => ", df.duplicated().sum())

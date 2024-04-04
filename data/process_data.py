@@ -47,7 +47,7 @@ def clean_data(df):
     for column in categories:
         categories[column] = [cat[len(cat)-1:] for cat in categories[column]]
         categories[column] = pd.Series(categories[column], dtype="object")
-    
+    categories = categories[categories['storm'] != 2]
     print("CATEGORES DF => ", categories.head())
     
     df.drop(['categories'], inplace=True, axis=1)
